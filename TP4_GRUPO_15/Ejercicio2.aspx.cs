@@ -11,6 +11,7 @@ namespace TP4_GRUPO_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           if (!IsPostBack) {
             ddlProducto.Items.Add("Igual a: ");
             ddlProducto.Items.Add("Mayor a: ");
             ddlProducto.Items.Add("Menor a: ");
@@ -18,6 +19,7 @@ namespace TP4_GRUPO_15
             ddlCategoria.Items.Add("Igual a: ");
             ddlCategoria.Items.Add("Mayor a: ");
             ddlCategoria.Items.Add("Menor a: ");
+           }
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
