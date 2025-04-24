@@ -49,6 +49,34 @@
         .auto-style20 {
             height: 25px;
         }
+        .auto-style21 {
+            width: 80px;
+            height: 23px;
+        }
+        .auto-style22 {
+            width: 140px;
+            height: 23px;
+        }
+        .auto-style23 {
+            width: 150px;
+            height: 23px;
+        }
+        .auto-style24 {
+            height: 23px;
+        }
+        .auto-style25 {
+            width: 140px;
+            font-weight: bold;
+        }
+        .auto-style26 {
+            width: 140px;
+            font-weight: bold;
+            height: 23px;
+        }
+        .auto-style27 {
+            width: 140px;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +120,50 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style20"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style22"></td>
+                    <td class="auto-style23"></td>
+                    <td class="auto-style24"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style27">DESTINO FINAL</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style22"><strong>PROVINCIA:</strong></td>
+                    <td class="auto-style23">
+                        <asp:DropDownList ID="ddlProvinciaFinal" runat="server" Height="21px" Width="130px">
+                            <asp:ListItem>--Seleccionar--</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style24"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style22"><strong>LOCALIDAD:</strong></td>
+                    <td class="auto-style23">
+                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="18px" Width="130px">
+                            <asp:ListItem>--Seleccionar--</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style24"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style21"></td>
+                    <td class="auto-style26"></td>
+                    <td class="auto-style23"></td>
+                    <td class="auto-style24"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
