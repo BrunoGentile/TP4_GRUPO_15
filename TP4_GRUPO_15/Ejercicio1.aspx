@@ -107,7 +107,9 @@
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style20"></td>
+                    <td class="auto-style20">
+                        <asp:RequiredFieldValidator ID="rfvProvInicio" runat="server" ControlToValidate="DDL_Provincia1" InitialValue="--Seleccionar--">Seleccione una provincia</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style17"></td>
@@ -119,7 +121,9 @@
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style20"></td>
+                    <td class="auto-style20">
+                        <asp:RequiredFieldValidator ID="rfvLocInicio" runat="server" ControlToValidate="DDL_Localidad1" InitialValue="--Seleccionar--">Seleccione una localidad</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style21"></td>

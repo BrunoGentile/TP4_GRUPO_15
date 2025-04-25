@@ -51,6 +51,15 @@ namespace TP4_GRUPO_15
         protected global::System.Web.UI.WebControls.DropDownList DDL_Provincia1;
 
         /// <summary>
+        /// Control rfvProvInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProvInicio;
+
+        /// <summary>
         /// Control LBL_Localidad1.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace TP4_GRUPO_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDL_Localidad1;
+
+        /// <summary>
+        /// Control rfvLocInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLocInicio;
 
         /// <summary>
         /// Control ddlProvinciaFinal.

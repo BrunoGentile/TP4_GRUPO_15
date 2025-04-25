@@ -15,6 +15,7 @@ namespace TP4_GRUPO_15
         private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Viajes; Integrated Security = True; TrustServerCertificate=True";
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 //Establecer conexion
