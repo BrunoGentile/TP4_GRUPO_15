@@ -118,7 +118,7 @@
                         <asp:Label ID="LBL_Localidad1" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td class="auto-style19">
-                        <asp:DropDownList ID="DDL_Localidad1" runat="server" Height="16px" Width="130px">
+                        <asp:DropDownList ID="DDL_Localidad1" runat="server" Height="16px" Width="130px" style="margin-bottom: 0px">
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
@@ -175,7 +175,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btnRestablecerSelecciones" runat="server" OnClick="btnRestablecerSelecciones_Click" Text="Restablecer selecciones" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
