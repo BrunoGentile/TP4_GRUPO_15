@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Data;
 
 namespace TP4_GRUPO_15
 {
@@ -82,6 +83,33 @@ namespace TP4_GRUPO_15
 
                 sqlConnection.Close();
             }
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            // REINICIO DE LOS TEXTBOX
+            txtProducto.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
+
+            // REINICIO DE LOS DDL
+            ddlProducto.SelectedIndex = 0;
+            ddlCategoria.SelectedIndex = 0;
+
+            // REINICIO GRIDVIEW
+            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
+            sqlConnection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(ConsultaSQL_IdProducto, sqlConnection);
+
+            // CREO UNA INSTANCIA NUEVA DE LA CLASE DataSet
+            DataSet ds = new DataSet();
+            sqlDataAdapter.Fill(ds, "TablaProducto");
+
+            // ASIGNAR LA TABLA DE DATOS COMO ORIGEN DE DATOS DEL GRIDVIEW
+            gvProductos.DataSource = ds.Tables["TablaProducto"];
+            gvProductos.DataBind();
+
+            sqlConnection.Close();
         }
     }
 }

@@ -157,7 +157,7 @@
                     <asp:Button ID="btnFiltrar" runat="server" style="margin-left: 24px" Text="Filtrar" OnClick="btnFiltrar_Click" />
                 </td>
                 <td class="auto-style6">
-                    <asp:Button ID="btnQuitarFiltro" runat="server" style="margin-left: 0px" Text="Quitar filtro" Width="78px" />
+                    <asp:Button ID="btnQuitarFiltro" runat="server" style="margin-left: 0px" Text="Quitar filtro" Width="78px" OnClick="btnQuitarFiltro_Click" ValidationGroup="group1" />
                 </td>
                 <td class="auto-style16"></td>
                 <td class="auto-style16"></td>
