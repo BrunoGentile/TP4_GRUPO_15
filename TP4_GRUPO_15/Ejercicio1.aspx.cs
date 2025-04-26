@@ -12,7 +12,7 @@ namespace TP4_GRUPO_15
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-8RCUNNO\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
+        private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
         private string ConsultaSQL_Provincias = "SELECT * FROM provincias";
         protected void Page_Load(object sender, EventArgs e)
         {

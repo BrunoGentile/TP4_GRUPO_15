@@ -11,7 +11,7 @@ namespace TP4_GRUPO_15
 {
     public partial class Ejercicio2 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-8RCUNNO\SQLEXPRESS;Initial Catalog = Neptuno; Integrated Security = True; TrustServerCertificate=True";
+        private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Neptuno; Integrated Security = True; TrustServerCertificate=True";
         private string ConsultaSQL_IdProducto = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
 
