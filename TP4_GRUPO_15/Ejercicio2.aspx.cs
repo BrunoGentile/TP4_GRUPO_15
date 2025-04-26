@@ -49,5 +49,38 @@ namespace TP4_GRUPO_15
         {
 
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
+            {
+              string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
+                SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
+                sqlConnection.Open();
+
+                SqlCommand sqlCommand_Categoria = new SqlCommand(ConsultaSQL_IdCategoria, sqlConnection);
+                sqlCommand_Categoria.Parameters.AddWithValue("@IdCategoría", Convert.ToInt32(txtCategoria.Text));
+
+                SqlDataReader sqlDataReader = sqlCommand_Categoria.ExecuteReader();
+
+                if (sqlDataReader.HasRows)
+                {
+                    gvProductos.DataSource = sqlDataReader;
+                    gvProductos.DataBind();
+                    lblMensaje.Visible = false;
+                }
+                else
+                {
+                    gvProductos.DataSource = null;
+                    gvProductos.DataBind();
+                    lblMensaje.Text = "No se encontraron productos para esta categoría.";
+                    lblMensaje.Visible = true;
+                }
+
+                
+
+                sqlConnection.Close();
+            }
+        }
     }
 }
