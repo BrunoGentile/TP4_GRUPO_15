@@ -19,6 +19,7 @@
         }
         .auto-style4 {
             height: 40px;
+            width: 474px;
         }
         .auto-style5 {
             width: 140px;
@@ -28,7 +29,6 @@
             width: 140px;
         }
         .auto-style7 {
-            width: 150px;
         }
         .auto-style8 {
             height: 40px;
@@ -48,6 +48,7 @@
         }
         .auto-style20 {
             height: 25px;
+            width: 474px;
         }
         .auto-style21 {
             width: 80px;
@@ -63,6 +64,7 @@
         }
         .auto-style24 {
             height: 23px;
+            width: 474px;
         }
         .auto-style25 {
             width: 140px;
@@ -77,6 +79,9 @@
             width: 140px;
             text-decoration: underline;
         }
+        .auto-style28 {
+            width: 474px;
+        }
     </style>
 </head>
 <body>
@@ -87,7 +92,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
@@ -95,6 +102,8 @@
                         <asp:Label ID="LBL_DestinoInicio" runat="server" Font-Underline="True" Text="DESTINO INICIO"></asp:Label>
                     </td>
                     <td class="auto-style8"></td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
@@ -108,9 +117,13 @@
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style20">
+                    <td class="auto-style19">
                         <asp:RequiredFieldValidator ID="rfvProvInicio" runat="server" ControlToValidate="DDL_Provincia1" InitialValue="--Seleccionar--">Seleccione una provincia</asp:RequiredFieldValidator>
                     </td>
+                    <td class="auto-style19">
+                        &nbsp;</td>
+                    <td class="auto-style20">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17"></td>
@@ -118,25 +131,33 @@
                         <asp:Label ID="LBL_Localidad1" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td class="auto-style19">
-                        <asp:DropDownList ID="DDL_Localidad1" runat="server" Height="16px" Width="130px" style="margin-bottom: 0px">
+                        <asp:DropDownList ID="DDL_Localidad1" runat="server" Height="16px" Width="130px" style="margin-bottom: 0px" AutoPostBack="true" OnSelectedIndexChanged="DDL_Localidad1_SelectedIndexChanged">
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style20">
+                    <td class="auto-style19">
                         <asp:RequiredFieldValidator ID="rfvLocInicio" runat="server" ControlToValidate="DDL_Localidad1" InitialValue="--Seleccionar--">Seleccione una localidad</asp:RequiredFieldValidator>
                     </td>
+                    <td class="auto-style19">
+                        &nbsp;</td>
+                    <td class="auto-style20">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style21"></td>
                     <td class="auto-style22"></td>
                     <td class="auto-style23"></td>
+                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style23">&nbsp;</td>
                     <td class="auto-style24"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style27">DESTINO FINAL</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style21"></td>
@@ -147,49 +168,67 @@
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
+                    <td class="auto-style23">
+                        &nbsp;</td>
+                    <td class="auto-style23">
+                        &nbsp;</td>
                     <td class="auto-style24"></td>
                 </tr>
                 <tr>
                     <td class="auto-style21"></td>
                     <td class="auto-style22"><strong>LOCALIDAD:</strong></td>
                     <td class="auto-style23">
-                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="18px" Width="130px">
+                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" AutoPostBack="true" Height="18px" Width="130px" OnSelectedIndexChanged="ddlLocalidadFinal_SelectedIndexChanged">
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
+                    <td class="auto-style23">
+                        &nbsp;</td>
+                    <td class="auto-style23">
+                        &nbsp;</td>
                     <td class="auto-style24"></td>
                 </tr>
                 <tr>
                     <td class="auto-style21"></td>
                     <td class="auto-style26"></td>
                     <td class="auto-style23"></td>
+                    <td class="auto-style23">&nbsp;</td>
+                    <td class="auto-style23">&nbsp;</td>
                     <td class="auto-style24"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style25">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>
-                        <asp:Button ID="btnRestablecerSelecciones" runat="server" OnClick="btnRestablecerSelecciones_Click" Text="Restablecer selecciones" />
+                    <td class="auto-style7" colspan="4">
+                        <asp:Label ID="lblDistancia" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7">
+                        <asp:Button ID="btnRestablecerSelecciones" runat="server" OnClick="btnRestablecerSelecciones_Click" Text="Restablecer selecciones" />
+                    </td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style28">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
             </table>
         </div>

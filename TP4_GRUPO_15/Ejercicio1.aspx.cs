@@ -16,7 +16,7 @@ namespace TP4_GRUPO_15
         private string ConsultaSQL_Provincias = "SELECT * FROM provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
-             this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None; // LO HICE DESDE Web.config
+            this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None; // LO HICE DESDE Web.config
 
             if (!IsPostBack)
             {
@@ -52,6 +52,7 @@ namespace TP4_GRUPO_15
                 reader_Prov2.Close();
 
                 sqlConnection.Close();
+
             }
         }
 
@@ -101,6 +102,7 @@ namespace TP4_GRUPO_15
                 ddlLocalidadFinal.DataBind();
                 ddlLocalidadFinal.Items.Insert(0, new ListItem("--Seleccionar--", ""));
 
+
                 reader_Loc2.Close();
                 sqlConnection.Close();
             }
@@ -113,6 +115,88 @@ namespace TP4_GRUPO_15
             DDL_Localidad1.SelectedIndex = 0;
             ddlProvinciaFinal.SelectedIndex = 0;
             ddlLocalidadFinal.SelectedIndex = 0;
+            lblDistancia.Text = "";
+        }
+
+        private string CalcularDistancia(string origen, string destino)
+        {
+            var distancias = new Dictionary<(string, string), int>()
+    {
+        // Buenos Aires - Entre Ríos
+        { ("Campana", "Colon"), 250 },
+        { ("Campana", "Concordia"), 400 },
+        { ("Campana", "Gualeguay"), 320 },
+        { ("Campana", "Gualeguaychu"), 280 },
+        { ("Pacheco", "Colon"), 260 },
+        { ("Pacheco", "Concordia"), 410 },
+        { ("Pacheco", "Gualeguay"), 330 },
+        { ("Pacheco", "Gualeguaychu"), 290 },
+        { ("Retiro", "Colon"), 240 },
+        { ("Retiro", "Concordia"), 390 },
+        { ("Retiro", "Gualeguay"), 310 },
+        { ("Retiro", "Gualeguaychu"), 270 },
+        { ("San isidro", "Colon"), 250 },
+        { ("San isidro", "Concordia"), 400 },
+        { ("San isidro", "Gualeguay"), 320 },
+        { ("San isidro", "Gualeguaychu"), 280 },
+
+        // Buenos Aires - Santa Fe
+        { ("Campana", "Arocena"), 380 },
+        { ("Campana", "Rafaela"), 480 },
+        { ("Campana", "Rosario"), 310 },
+        { ("Pacheco", "Arocena"), 390 },
+        { ("Pacheco", "Rafaela"), 490 },
+        { ("Pacheco", "Rosario"), 320 },
+        { ("Retiro", "Arocena"), 370 },
+        { ("Retiro", "Rafaela"), 470 },
+        { ("Retiro", "Rosario"), 300 },
+        { ("San isidro", "Arocena"), 380 },
+        { ("San isidro", "Rafaela"), 480 },
+        { ("San isidro", "Rosario"), 310 },
+
+        // Entre Ríos - Santa Fe
+        { ("Colon", "Arocena"), 220 },
+        { ("Colon", "Rafaela"), 320 },
+        { ("Colon", "Rosario"), 180 },
+        { ("Concordia", "Arocena"), 340 },
+        { ("Concordia", "Rafaela"), 440 },
+        { ("Concordia", "Rosario"), 300 },
+        { ("Gualeguay", "Arocena"), 260 },
+        { ("Gualeguay", "Rafaela"), 360 },
+        { ("Gualeguay", "Rosario"), 220 },
+        { ("Gualeguaychu", "Arocena"), 280 },
+        { ("Gualeguaychu", "Rafaela"), 380 },
+        { ("Gualeguaychu", "Rosario"), 240 }
+    };
+
+            if (distancias.ContainsKey((origen, destino)))
+            {
+                return $"La distancia entre {origen} y {destino} es de {distancias[(origen, destino)]} km.";
+            }
+            else if (distancias.ContainsKey((destino, origen)))
+            {
+                return $"La distancia entre {origen} y {destino} es de {distancias[(destino, origen)]} km.";
+            }
+            else
+            {
+                return "No se encontró la distancia entre esas localidades.";
+            }
+        }
+
+        protected void ddlLocalidadFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(ddlLocalidadFinal.SelectedValue))
+            {
+                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(),ddlLocalidadFinal.SelectedItem.ToString());
+            }
+        }
+
+        protected void DDL_Localidad1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(DDL_Localidad1.SelectedValue) && !string.IsNullOrEmpty(ddlLocalidadFinal.SelectedValue))
+            {
+                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
+            }
         }
     }
 }
