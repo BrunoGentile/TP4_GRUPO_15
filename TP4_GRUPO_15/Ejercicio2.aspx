@@ -11,7 +11,6 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 95px;
         }
         .auto-style4 {
             width: 233px;
@@ -21,9 +20,11 @@
         }
         .auto-style6 {
             width: 85px;
+            height: 50px;
         }
         .auto-style7 {
             width: 101px;
+            height: 50px;
         }
         .auto-style8 {
             height: 23px;
@@ -54,6 +55,39 @@
         .auto-style15 {
             width: 233px;
             height: 26px;
+        }
+        .auto-style16 {
+            height: 50px;
+        }
+        .auto-style17 {
+            width: 94px;
+            height: 50px;
+        }
+        .auto-style18 {
+            height: 40px;
+        }
+        .auto-style19 {
+            width: 95px;
+            height: 40px;
+        }
+        .auto-style20 {
+            width: 94px;
+            height: 40px;
+        }
+        .auto-style21 {
+            width: 233px;
+            height: 40px;
+        }
+        .auto-style22 {
+            height: 10px;
+        }
+        .auto-style23 {
+            width: 94px;
+            height: 10px;
+        }
+        .auto-style24 {
+            width: 233px;
+            height: 10px;
         }
     </style>
 </head>
@@ -116,49 +150,46 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style16"></td>
+                <td class="auto-style16"></td>
+                <td class="auto-style17"></td>
                 <td class="auto-style7">
                     <asp:Button ID="btnFiltrar" runat="server" style="margin-left: 24px" Text="Filtrar" OnClick="btnFiltrar_Click" />
                 </td>
                 <td class="auto-style6">
                     <asp:Button ID="btnQuitarFiltro" runat="server" style="margin-left: 0px" Text="Quitar filtro" Width="78px" />
                 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16"></td>
+                <td class="auto-style16"></td>
+                <td class="auto-style16"></td>
             </tr>
             <tr>
-                <td class="auto-style8"></td>
-                <td class="auto-style9"></td>
-                <td class="auto-style10"></td>
-                <td class="auto-style11" colspan="2">
+                <td class="auto-style18"></td>
+                <td class="auto-style19"></td>
+                <td class="auto-style20"></td>
+                <td class="auto-style21" colspan="2">
                     <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 </td>
-                <td class="auto-style8"></td>
-                <td class="auto-style8"></td>
-                <td class="auto-style8"></td>
+                <td class="auto-style18"></td>
+                <td class="auto-style18"></td>
+                <td class="auto-style18"></td>
+            </tr>
+            <tr>
+                <td class="auto-style22"></td>
+                <td class="auto-style22"></td>
+                <td class="auto-style23"></td>
+                <td class="auto-style24" colspan="2">
+                    </td>
+                <td class="auto-style22"></td>
+                <td class="auto-style22"></td>
+                <td class="auto-style22"></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4" colspan="2">
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4" colspan="2">
+                <td class="auto-style2" colspan="5">
                     <asp:GridView ID="gvProductos" runat="server"  style="margin-left: 0px" Width="280px">
                     </asp:GridView>
                 </td>
-                <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
