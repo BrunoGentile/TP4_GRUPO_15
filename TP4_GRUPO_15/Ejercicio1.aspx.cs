@@ -13,8 +13,6 @@ namespace TP4_GRUPO_15
     public partial class Ejercicio1 : System.Web.UI.Page
     {
         private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Viajes; Integrated Security = True; TrustServerCertificate=True";
-        private string ConsultaSQL_Provincias = "SELECT DISTINCT IdProvincia, NombreProvincia FROM Provincias";
-
         protected void Page_Load(object sender, EventArgs e)
         {
             // this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None; // LO HICE DESDE Web.config

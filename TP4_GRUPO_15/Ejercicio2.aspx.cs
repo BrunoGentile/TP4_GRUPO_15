@@ -5,12 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace TP4_GRUPO_15
 {
     public partial class Ejercicio2 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-150PF2K\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+        private const string cadenaConexion = @"Data Source=DESKTOP-8RCUNNO\SQLEXPRESS;Initial Catalog = Neptuno; Integrated Security = True; TrustServerCertificate=True";
+        private string ConsultaSQL_IdProducto = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
            if (!IsPostBack) {
@@ -25,6 +29,12 @@ namespace TP4_GRUPO_15
             //conexion extablecida
             SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
             sqlConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand(ConsultaSQL_IdProducto, sqlConnection);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                gvProductos.DataSource = sqlDataReader;
+                gvProductos.DataBind();
 
             sqlConnection.Close();
             }

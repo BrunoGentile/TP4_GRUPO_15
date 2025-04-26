@@ -12,7 +12,7 @@ namespace TP4_GRUPO_15
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private const string conexion = @"Data Source=DESKTOP-8RCUNNO\SQLEXPRESS;Initial Catalog = Libreria; Integrated Security = True; Encrypt=True;Trust Server Certificate=True";
+        private const string cadenaConexion = @"Data Source=DESKTOP-8RCUNNO\SQLEXPRESS;Initial Catalog = Libreria; Integrated Security = True; Encrypt=True;Trust Server Certificate=True";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,15 +23,11 @@ namespace TP4_GRUPO_15
             if (!IsPostBack)
             {
                 //Establecer conexion
-                SqlConnection sqlConnection = new SqlConnection(conexion);
+                SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
                 sqlConnection.Open();
-
-
-
 
                 sqlConnection.Close();
 
             }
         }
     }
-}
