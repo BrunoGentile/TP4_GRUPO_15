@@ -24,21 +24,21 @@ namespace TP4_GRUPO_15
                 sqlConnection.Open();
 
                 // ESTABLECER CONSULTA CON LA BASE DE DATOS PARA LAS PROVINCIAS
-                SqlCommand sqlCommand_Provincias1 = new SqlCommand(ConsultaSQL_Provincias, sqlConnection);
-                SqlDataReader reader_Prov1 = sqlCommand_Provincias1.ExecuteReader();
+            //    SqlCommand sqlCommand_Provincias1 = new SqlCommand(ConsultaSQL_Provincias, sqlConnection);
+            //    SqlDataReader reader_Prov1 = sqlCommand_Provincias1.ExecuteReader();
 
                 // ACÁ ABAJO IRÍA LA CARGA DEL DROPDOWNLIST PROVINCIAS
-                DDL_Provincia1.DataSource = reader_Prov1;
+            //    DDL_Provincia1.DataSource = reader_Prov1;
                 DDL_Provincia1.DataTextField = "NombreProvincia";
                 DDL_Provincia1.DataValueField = "IdProvincia";
                 DDL_Provincia1.DataBind();
 
-                reader_Prov1.Close(); // CIERRO EL READER PARA PODER ABRIRLO PARA LOCALIDADES
+            //    reader_Prov1.Close(); // CIERRO EL READER PARA PODER ABRIRLO PARA LOCALIDADES
 
-                SqlCommand sqlCommand_Provincias2 = new SqlCommand(ConsultaSQL_Provincias, sqlConnection);
-                SqlDataReader reader_Prov2 = sqlCommand_Provincias2.ExecuteReader();
+            //    SqlCommand sqlCommand_Provincias2 = new SqlCommand(ConsultaSQL_Provincias, sqlConnection);
+            //    SqlDataReader reader_Prov2 = sqlCommand_Provincias2.ExecuteReader();
 
-                ddlProvinciaFinal.DataSource = reader_Prov2;
+            //    ddlProvinciaFinal.DataSource = reader_Prov2;
                 ddlProvinciaFinal.DataTextField = "NombreProvincia";
                 ddlProvinciaFinal.DataValueField = "IdProvincia";
                 ddlProvinciaFinal.DataBind();
@@ -48,7 +48,7 @@ namespace TP4_GRUPO_15
                 DDL_Localidad1.Items.Insert(0, new ListItem("--Seleccionar--", ""));
                 ddlLocalidadFinal.Items.Insert(0, new ListItem("--Seleccionar--", ""));
 
-                reader_Prov2.Close();
+             //   reader_Prov2.Close();
 
                 sqlConnection.Close();
             }

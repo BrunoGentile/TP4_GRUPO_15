@@ -51,7 +51,9 @@
                 <td class="auto-style4" colspan="2">
                     <asp:TextBox ID="txtProducto" runat="server" Width="214px"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:CompareValidator ID="cvProducto" runat="server" ControlToValidate="txtProducto" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -76,7 +78,9 @@
                 <td class="auto-style4" colspan="2">
                     <asp:TextBox ID="txtCategoria" runat="server" Width="211px"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:CompareValidator ID="cvCategoria" runat="server" ControlToValidate="txtCategoria" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
