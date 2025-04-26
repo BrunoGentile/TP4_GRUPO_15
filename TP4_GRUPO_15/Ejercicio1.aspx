@@ -103,7 +103,8 @@
                         <asp:Label ID="LBL_Provincia1" runat="server" Font-Bold="True" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td class="auto-style19">
-                        <asp:DropDownList ID="DDL_Provincia1" runat="server" Height="16px" Width="130px">
+                        <asp:DropDownList ID="DDL_Provincia1" runat="server" AutoPostBack="true"
+                            OnSelectedIndexChanged="DDL_Provincia1_SelectedIndexChanged" Height="16px" Width="130px">
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
@@ -141,7 +142,8 @@
                     <td class="auto-style21"></td>
                     <td class="auto-style22"><strong>PROVINCIA:</strong></td>
                     <td class="auto-style23">
-                        <asp:DropDownList ID="ddlProvinciaFinal" runat="server" Height="21px" Width="130px">
+                        <asp:DropDownList ID="ddlProvinciaFinal" runat="server" AutoPostBack="true"
+                            OnSelectedIndexChanged="ddlProvinciaFinal_SelectedIndexChanged" Height="21px" Width="130px">
                             <asp:ListItem>--Seleccionar--</asp:ListItem>
                         </asp:DropDownList>
                     </td>
