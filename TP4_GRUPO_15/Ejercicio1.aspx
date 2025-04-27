@@ -218,7 +218,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">
+                        <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
+                    </td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
                 </tr>

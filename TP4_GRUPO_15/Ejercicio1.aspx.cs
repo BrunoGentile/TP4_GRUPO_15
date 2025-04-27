@@ -198,5 +198,10 @@ namespace TP4_GRUPO_15
                 lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
             }
         }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }
