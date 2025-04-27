@@ -13,6 +13,20 @@
         .auto-style2 {
             width: 144px;
         }
+        .auto-style3 {
+            width: 144px;
+            height: 35px;
+        }
+        .auto-style4 {
+            height: 35px;
+        }
+        .auto-style5 {
+            width: 144px;
+            height: 150px;
+        }
+        .auto-style6 {
+            height: 150px;
+        }
     </style>
 </head>
 <body>
@@ -20,29 +34,29 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style3">
                         <asp:Label ID="lblListado" runat="server" Text="Listado de libros:"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style5">
                         <asp:GridView ID="gvLibros" runat="server">
                         </asp:GridView>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>

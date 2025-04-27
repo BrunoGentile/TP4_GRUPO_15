@@ -40,7 +40,7 @@ namespace TP4_GRUPO_15
 
         protected void lbLibros_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ejercicio3b.aspx");
+            Server.Transfer("Ejercicio3b.aspx");
         }
     }
 }
