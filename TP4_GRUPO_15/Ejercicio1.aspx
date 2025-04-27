@@ -169,8 +169,11 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style23">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
+<asp:RequiredFieldValidator ID="rfvProvinciaFinal" runat="server" ControlToValidate="ddlProvinciaFinal" InitialValue="--Seleccionar--">Seleccione una provincia</asp:RequiredFieldValidator>
+                        </td>
+<asp:Label ID="lblMensaje" runat="server"></asp:Label>
+
+                        &nbsp;</td>
                     <td class="auto-style23">
                         &nbsp;</td>
                     <td class="auto-style24"></td>
@@ -184,9 +187,10 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style23">
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="rfvLocFinal" runat="server" ControlToValidate="ddlLocalidadFinal" InitialValue="0">Seleccione una localidad</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style23">
-                        &nbsp;</td>
+                        </td>
                     <td class="auto-style24"></td>
                 </tr>
                 <tr>
@@ -202,6 +206,13 @@
                     <td class="auto-style25">&nbsp;</td>
                     <td class="auto-style7" colspan="4">
                         <asp:Label ID="lblDistancia" runat="server"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style7" colspan="4">
+                        <asp:Label ID="lblPrecios" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>

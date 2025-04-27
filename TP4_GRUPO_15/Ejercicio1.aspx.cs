@@ -185,11 +185,76 @@ namespace TP4_GRUPO_15
             }
         }
 
+        private string CalcularPrecios(string origen, string destino)
+        {
+            var Precios = new Dictionary<(string, string), int>()
+    {
+        // Buenos Aires - Entre Ríos
+        { ("Campana", "Colon"), 250*200 },
+        { ("Campana", "Concordia"), 400 * 200 },
+        { ("Campana", "Gualeguay"), 320 * 200 },
+        { ("Campana", "Gualeguaychu"), 280 * 200 },
+        { ("Pacheco", "Colon"), 260 * 200 },
+        { ("Pacheco", "Concordia"), 410 * 200 },
+        { ("Pacheco", "Gualeguay"), 330 * 200 },
+        { ("Pacheco", "Gualeguaychu"), 290 * 200 },
+        { ("Retiro", "Colon"), 240 * 200 },
+        { ("Retiro", "Concordia"), 390 * 200 },
+        { ("Retiro", "Gualeguay"), 310 * 200 },
+        { ("Retiro", "Gualeguaychu"), 270 * 200 },
+        { ("San isidro", "Colon"), 250 * 200 },
+        { ("San isidro", "Concordia"), 400 * 200 },
+        { ("San isidro", "Gualeguay"), 320 * 200 },
+        { ("San isidro", "Gualeguaychu"), 280 * 200 },
+
+        // Buenos Aires - Santa Fe
+        { ("Campana", "Arocena"), 380*200 },
+        { ("Campana", "Rafaela"), 480*200 },
+        { ("Campana", "Rosario"), 310*200 },
+        { ("Pacheco", "Arocena"), 390*200 },
+        { ("Pacheco", "Rafaela"), 490*200 },
+        { ("Pacheco", "Rosario"), 320*200 },
+        { ("Retiro", "Arocena"), 370*200 },
+        { ("Retiro", "Rafaela"), 470*200 },
+        { ("Retiro", "Rosario"), 300*200 },
+        { ("San isidro", "Arocena"), 380*200 },
+        { ("San isidro", "Rafaela"), 480*200 },
+        { ("San isidro", "Rosario"), 310*200 },
+
+        // Entre Ríos - Santa Fe
+        { ("Colon", "Arocena"), 220*200 },
+        { ("Colon", "Rafaela"), 320*200 },
+        { ("Colon", "Rosario"), 180*200 },
+        { ("Concordia", "Arocena"), 340*200 },
+        { ("Concordia", "Rafaela"), 440*200 },
+        { ("Concordia", "Rosario"), 300*200 },
+        { ("Gualeguay", "Arocena"), 260 * 200 },
+        { ("Gualeguay", "Rafaela"), 360 * 200 },
+        { ("Gualeguay", "Rosario"), 220 * 200 },
+        { ("Gualeguaychu", "Arocena"), 280 * 200  },
+        { ("Gualeguaychu", "Rafaela"), 380 * 200 },
+        { ("Gualeguaychu", "Rosario"), 240 * 200 }
+    };
+            if (Precios.ContainsKey((origen, destino)))
+            {
+                return $"El precio estimado de su vuelo es de ${Precios[(origen, destino)]} pesos argentinos.";
+            }
+            else if (Precios.ContainsKey((destino, origen)))
+            {
+                return $"El precio estimado de su vuelo es de ${Precios[(origen, destino)]} pesos argentinos.";
+            }
+            else
+            {
+                return "No se encontró el precio del vuelo requerido.";
+            }
+        }
+
         protected void ddlLocalidadFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(ddlLocalidadFinal.SelectedValue))
             {
-                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
+                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(),ddlLocalidadFinal.SelectedItem.ToString());
+                lblPrecios.Text = CalcularPrecios(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
             }
         }
 
@@ -198,6 +263,7 @@ namespace TP4_GRUPO_15
             if (!string.IsNullOrEmpty(DDL_Localidad1.SelectedValue) && !string.IsNullOrEmpty(ddlLocalidadFinal.SelectedValue))
             {
                 lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
+                lblPrecios.Text = CalcularPrecios(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
             }
         }
 

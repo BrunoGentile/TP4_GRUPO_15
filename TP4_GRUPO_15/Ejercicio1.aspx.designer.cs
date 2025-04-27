@@ -96,13 +96,13 @@ namespace TP4_GRUPO_15
         protected global::System.Web.UI.WebControls.DropDownList ddlProvinciaFinal;
 
         /// <summary>
-        /// Control lblMensaje.
+        /// Control rfvProvinciaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProvinciaFinal;
 
         /// <summary>
         /// Control ddlLocalidadFinal.
@@ -114,6 +114,15 @@ namespace TP4_GRUPO_15
         protected global::System.Web.UI.WebControls.DropDownList ddlLocalidadFinal;
 
         /// <summary>
+        /// Control rfvLocFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLocFinal;
+
+        /// <summary>
         /// Control lblDistancia.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace TP4_GRUPO_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDistancia;
+
+        /// <summary>
+        /// Control lblPrecios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecios;
 
         /// <summary>
         /// Control btnRestablecerSelecciones.
