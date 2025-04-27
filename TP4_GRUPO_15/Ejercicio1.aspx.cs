@@ -12,8 +12,9 @@ namespace TP4_GRUPO_15
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
+        private const string cadenaConexion = @"Data Source=DESKTOP-8rcunno\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
         private string ConsultaSQL_Provincias = "SELECT * FROM provincias";
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None; // LO HICE DESDE Web.config
@@ -106,6 +107,7 @@ namespace TP4_GRUPO_15
                 reader_Loc2.Close();
                 sqlConnection.Close();
             }
+            ValidarProvincias();
         }
 
         protected void btnRestablecerSelecciones_Click(object sender, EventArgs e)
@@ -187,7 +189,7 @@ namespace TP4_GRUPO_15
         {
             if (!string.IsNullOrEmpty(ddlLocalidadFinal.SelectedValue))
             {
-                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(),ddlLocalidadFinal.SelectedItem.ToString());
+                lblDistancia.Text = CalcularDistancia(DDL_Localidad1.SelectedItem.ToString(), ddlLocalidadFinal.SelectedItem.ToString());
             }
         }
 
@@ -203,5 +205,29 @@ namespace TP4_GRUPO_15
         {
             Response.Redirect("Inicio.aspx");
         }
+
+        private void ValidarProvincias()
+        {
+            if (!string.IsNullOrEmpty(DDL_Provincia1.SelectedValue) &&
+                DDL_Provincia1.SelectedValue == ddlProvinciaFinal.SelectedValue)
+            {
+                lblMensaje.Text = "No puedes seleccionar la misma provincia en ambos campos.";
+                ddlProvinciaFinal.SelectedIndex = 0; // Resetea la selección del final si son iguales
+            }
+            else
+            {
+                lblMensaje.Text = "";
+            }
+        }
+
+
     }
 }
+
+
+  
+
+       
+        
+    
+

@@ -39,7 +39,9 @@
                         <asp:DropDownList ID="ddlTemas" runat="server" OnSelectedIndexChanged="ddlTemas_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">
+                        <asp:RequiredFieldValidator ID="rfvTema" runat="server" ControlToValidate="ddlTemas" InitialValue="--Seleccione--">Seleccione un tema</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>

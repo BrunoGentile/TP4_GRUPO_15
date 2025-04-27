@@ -169,7 +169,8 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style23">
-                        &nbsp;</td>
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style23">
                         &nbsp;</td>
                     <td class="auto-style24"></td>
