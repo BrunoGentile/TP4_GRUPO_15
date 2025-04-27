@@ -82,6 +82,9 @@
         .auto-style28 {
             width: 474px;
         }
+        .auto-style29 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -209,9 +212,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style25">&nbsp;</td>
-                    <td class="auto-style7" colspan="4">
+                    <td class="auto-style21"></td>
+                    <td class="auto-style26">
+                        &nbsp;</td>
+                    <td class="auto-style29" colspan="4">
                         <asp:Label ID="lblPrecios" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -240,7 +244,8 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">
+                        &nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style28">&nbsp;</td>
                 </tr>

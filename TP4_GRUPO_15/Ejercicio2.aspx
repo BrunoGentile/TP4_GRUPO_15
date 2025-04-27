@@ -20,11 +20,11 @@
         }
         .auto-style6 {
             width: 85px;
-            height: 50px;
+            height: 28px;
         }
         .auto-style7 {
             width: 101px;
-            height: 50px;
+            height: 28px;
         }
         .auto-style8 {
             height: 23px;
@@ -42,11 +42,11 @@
             height: 23px;
         }
         .auto-style16 {
-            height: 50px;
+            height: 28px;
         }
         .auto-style17 {
             width: 94px;
-            height: 50px;
+            height: 28px;
         }
         .auto-style18 {
             height: 40px;
@@ -117,7 +117,7 @@
                     <asp:TextBox ID="txtProducto" runat="server" Width="214px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">
-                    <asp:CompareValidator ID="cvProducto" runat="server" ControlToValidate="txtProducto" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                    <asp:CompareValidator ID="cvProducto" runat="server" ControlToValidate="txtProducto" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ErrorMessage="No ingresó el código de producto correctamente" ValidationGroup="ValSum">Ingrese una cantidad valida</asp:CompareValidator>
                     <br />
                     <asp:Label ID="lblIdProducto" runat="server"></asp:Label>
                 </td>
@@ -146,7 +146,7 @@
                     <asp:TextBox ID="txtCategoria" runat="server" Width="211px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:CompareValidator ID="cvCategoria" runat="server" ControlToValidate="txtCategoria" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                    <asp:CompareValidator ID="cvCategoria" runat="server" ControlToValidate="txtCategoria" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ErrorMessage="No ingresó el código de categoría correcto" ValidationGroup="ValSum">Ingrese una cantidad valida</asp:CompareValidator>
                     <br />
                     <asp:Label ID="lblIdCategoria" runat="server"></asp:Label>
                 </td>
@@ -158,23 +158,27 @@
                 <td class="auto-style16"></td>
                 <td class="auto-style17"></td>
                 <td class="auto-style7">
-                    <asp:Button ID="btnFiltrar" runat="server" style="margin-left: 24px" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                    <asp:Button ID="btnFiltrar" runat="server" style="margin-left: 24px" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="ValSum" />
                 </td>
                 <td class="auto-style6">
-                    <asp:Button ID="btnQuitarFiltro" runat="server" style="margin-left: 0px" Text="Quitar filtro" Width="78px" OnClick="btnQuitarFiltro_Click" ValidationGroup="group1" />
+                    <asp:Button ID="btnQuitarFiltro" runat="server" style="margin-left: 0px" Text="Quitar filtro" Width="78px" OnClick="btnQuitarFiltro_Click" ValidationGroup="group1" CausesValidation="False" />
                 </td>
-                <td class="auto-style16"></td>
+                <td class="auto-style16">
+                    <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CausesValidation="False" />
+                </td>
                 <td class="auto-style16"></td>
                 <td class="auto-style16"></td>
             </tr>
             <tr>
                 <td class="auto-style18"></td>
-                <td class="auto-style19"></td>
+                <td class="auto-style19">&nbsp;</td>
                 <td class="auto-style20"></td>
                 <td class="auto-style21" colspan="2">
                     <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 </td>
-                <td class="auto-style18"></td>
+                <td class="auto-style18">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="ValSum" />
+                </td>
                 <td class="auto-style18"></td>
                 <td class="auto-style18"></td>
             </tr>

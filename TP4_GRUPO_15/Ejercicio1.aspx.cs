@@ -102,8 +102,6 @@ namespace TP4_GRUPO_15
                 ddlLocalidadFinal.DataValueField = "IdLocalidad";
                 ddlLocalidadFinal.DataBind();
                 ddlLocalidadFinal.Items.Insert(0, new ListItem("--Seleccionar--", ""));
-
-
                 reader_Loc2.Close();
                 sqlConnection.Close();
             }

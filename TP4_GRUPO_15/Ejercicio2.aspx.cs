@@ -250,5 +250,10 @@ namespace TP4_GRUPO_15
             txtProducto.Text = string.Empty;
             txtCategoria.Text = string.Empty;
         }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }
