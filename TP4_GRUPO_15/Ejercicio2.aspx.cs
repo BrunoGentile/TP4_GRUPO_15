@@ -141,7 +141,7 @@ namespace TP4_GRUPO_15
                 }
             }
 
-            else if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
+           if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
             {
                 string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
                 SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
