@@ -60,6 +60,15 @@ namespace TP4_GRUPO_15
         protected global::System.Web.UI.WebControls.CompareValidator cvProducto;
 
         /// <summary>
+        /// Control lblIdProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdProducto;
+
+        /// <summary>
         /// Control lblCategoria.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace TP4_GRUPO_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cvCategoria;
+
+        /// <summary>
+        /// Control lblIdCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdCategoria;
 
         /// <summary>
         /// Control btnFiltrar.

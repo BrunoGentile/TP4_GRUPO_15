@@ -52,18 +52,72 @@ namespace TP4_GRUPO_15
 
         }
 
+        private bool ExisteProducto(int idProducto)
+        {
+            bool existe = false;
+
+            using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
+            {
+                string consultaProducto = "SELECT COUNT(*) FROM Productos WHERE IdProducto = @IdProducto";
+                SqlCommand sqlCommand = new SqlCommand(consultaProducto, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@IdProducto", idProducto);
+
+                sqlConnection.Open();
+                int cantidad = (int)sqlCommand.ExecuteScalar();
+                existe = cantidad > 0;
+            }
+
+            return existe;
+        }
+
+        private bool ExisteCategoria(int idCategoria)
+        {
+            bool existe = false;
+
+            using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
+            {
+                string consultaCategoria = "SELECT COUNT(*) FROM Categorías WHERE IdCategoría = @IdCategoría";
+                SqlCommand sqlCommand = new SqlCommand(consultaCategoria, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@IdCategoría", idCategoria);
+
+                sqlConnection.Open();
+                int cantidad = (int)sqlCommand.ExecuteScalar();
+                existe = cantidad > 0;
+            }
+
+            return existe;
+        }
+
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            lblIdProducto.Text = "";
+            lblIdCategoria.Text = "";
+
+            int idProducto;
+            int idCategoria;
+
+            bool hayProducto = int.TryParse(txtProducto.Text, out idProducto);
+            bool hayCategoria = int.TryParse(txtCategoria.Text, out idCategoria);
+
+            if (hayProducto && !ExisteProducto(idProducto))
+            {
+                lblIdProducto.Text = "No existe un producto con ese ID.";
+            }
+            if (hayCategoria && !ExisteCategoria(idCategoria))
+            {
+                lblIdCategoria.Text = "No existe una categoría con ese ID.";
+            }
+
             if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
             {
-              string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
+                string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
                 SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
                 sqlConnection.Open();
 
                 SqlCommand sqlCommand_Categoria = new SqlCommand(ConsultaSQL_IdCategoria, sqlConnection);
                 sqlCommand_Categoria.Parameters.AddWithValue("@IdCategoría", Convert.ToInt32(txtCategoria.Text));
 
-                SqlDataReader sqlDataReader = sqlCommand_Categoria.ExecuteReader();
+                SqlDataReader sqlDataReader = sqlCommand_Categoria.ExecuteReader();  
 
                 if (sqlDataReader.HasRows)
                 {
@@ -79,10 +133,12 @@ namespace TP4_GRUPO_15
                     lblMensaje.Visible = true;
                 }
 
-                
-
                 sqlConnection.Close();
+
             }
+
+            txtProducto.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
         }
 
         protected void btnQuitarFiltro_Click(object sender, EventArgs e)
@@ -110,6 +166,9 @@ namespace TP4_GRUPO_15
             gvProductos.DataBind();
 
             sqlConnection.Close();
+
+            txtProducto.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
         }
     }
 }

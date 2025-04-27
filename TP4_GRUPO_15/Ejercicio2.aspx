@@ -41,21 +41,6 @@
             width: 233px;
             height: 23px;
         }
-        .auto-style12 {
-            height: 26px;
-        }
-        .auto-style13 {
-            width: 95px;
-            height: 26px;
-        }
-        .auto-style14 {
-            width: 94px;
-            height: 26px;
-        }
-        .auto-style15 {
-            width: 233px;
-            height: 26px;
-        }
         .auto-style16 {
             height: 50px;
         }
@@ -89,6 +74,21 @@
             width: 233px;
             height: 10px;
         }
+        .auto-style25 {
+            height: 36px;
+        }
+        .auto-style26 {
+            width: 95px;
+            height: 36px;
+        }
+        .auto-style27 {
+            width: 94px;
+            height: 36px;
+        }
+        .auto-style28 {
+            width: 233px;
+            height: 36px;
+        }
     </style>
 </head>
 <body>
@@ -105,22 +105,24 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style12"></td>
-                <td class="auto-style13">
+                <td class="auto-style25"></td>
+                <td class="auto-style26">
                     <asp:Label ID="lblProducto" runat="server" Text="Id Producto: "></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style27">
                     <asp:DropDownList ID="ddlProducto" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style15" colspan="2">
+                <td class="auto-style28" colspan="2">
                     <asp:TextBox ID="txtProducto" runat="server" Width="214px"></asp:TextBox>
                 </td>
-                <td class="auto-style12">
+                <td class="auto-style25">
                     <asp:CompareValidator ID="cvProducto" runat="server" ControlToValidate="txtProducto" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                    <br />
+                    <asp:Label ID="lblIdProducto" runat="server"></asp:Label>
                 </td>
-                <td class="auto-style12"></td>
-                <td class="auto-style12"></td>
+                <td class="auto-style25"></td>
+                <td class="auto-style25"></td>
             </tr>
             <tr>
                 <td class="auto-style8"></td>
@@ -145,6 +147,8 @@
                 </td>
                 <td>
                     <asp:CompareValidator ID="cvCategoria" runat="server" ControlToValidate="txtCategoria" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese una cantidad valida</asp:CompareValidator>
+                    <br />
+                    <asp:Label ID="lblIdCategoria" runat="server"></asp:Label>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

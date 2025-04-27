@@ -14,6 +14,8 @@ namespace TP4_GRUPO_15
     {
         private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;";
 
+        private string ConsultaSQL_Temas = "SELECT IdLibro, IdTema, Titulo, Precio, Autor FROM Temas WHERE IdTema = @IdTema";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ddlTemas.Items.Add("Tema 1");
