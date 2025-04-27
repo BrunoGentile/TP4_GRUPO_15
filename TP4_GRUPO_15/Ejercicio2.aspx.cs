@@ -110,7 +110,38 @@ namespace TP4_GRUPO_15
                 return;
             }
 
-            if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
+            if (!string.IsNullOrEmpty(txtProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                
+
+                string consultaSQL = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto = @IdProducto AND IdCategoría = @IdCategoría";
+
+                using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
+                {
+                    SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("@IdProducto", Convert.ToInt32(txtProducto.Text));
+                    sqlCommand.Parameters.AddWithValue("@IdCategoría", Convert.ToInt32(txtCategoria.Text));
+
+                    sqlConnection.Open();
+                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                    if (sqlDataReader.HasRows)
+                    {
+                        gvProductos.DataSource = sqlDataReader;
+                        gvProductos.DataBind();
+                        lblMensaje.Visible = false;
+                    }
+                    else
+                    {
+                        gvProductos.DataSource = null;
+                        gvProductos.DataBind();
+                        lblMensaje.Text = "No se encontraron productos para esos Id producto y categoría.";
+                        lblMensaje.Visible = true;
+                    }
+                }
+            }
+
+            else if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
             {
                 string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
                 SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
