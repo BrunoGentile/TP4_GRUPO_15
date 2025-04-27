@@ -54,6 +54,9 @@ namespace TP4_GRUPO_15
                     gvLibros.DataBind();
                 }
 
+                string CantRegistros = gvLibros.Rows.Count.ToString();
+                lblListado.Text += " Se encontraron " + CantRegistros + " registros del " + Tema;
+
                 sqlConnection.Close();
 
             }

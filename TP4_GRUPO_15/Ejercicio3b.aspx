@@ -14,7 +14,6 @@
             width: 144px;
         }
         .auto-style3 {
-            width: 144px;
             height: 35px;
         }
         .auto-style4 {
@@ -27,6 +26,24 @@
         .auto-style6 {
             height: 150px;
         }
+        .auto-style7 {
+            width: 144px;
+            height: 23px;
+        }
+        .auto-style8 {
+            height: 23px;
+        }
+        .auto-style12 {
+            height: 150px;
+            width: 60px;
+        }
+        .auto-style13 {
+            width: 60px;
+        }
+        .auto-style14 {
+            height: 23px;
+            width: 60px;
+        }
     </style>
 </head>
 <body>
@@ -34,13 +51,9 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblListado" runat="server" Text="Listado de libros:"></asp:Label>
+                    <td class="auto-style3" colspan="5">
+                        <asp:Label ID="lblListado" runat="server" Text="Listado de libros:" Font-Bold="False"></asp:Label>
                     </td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
@@ -50,8 +63,8 @@
                         <asp:GridView ID="gvLibros" runat="server">
                         </asp:GridView>
                     </td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
@@ -60,8 +73,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -69,21 +82,21 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:LinkButton ID="lbConsultaTema" runat="server" OnClick="lbConsultaTema_Click">Consultar otro tema</asp:LinkButton>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
