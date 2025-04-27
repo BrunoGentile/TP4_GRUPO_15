@@ -16,6 +16,38 @@ namespace TP4_GRUPO_15
         private string ConsultaSQL_IdProducto = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
 
+        // ---------- FUNCIONES PARA FILTRAR LA TABLA POR PRODUCTO ----------
+
+        protected void FiltrarPorProducto()
+        {
+            string ConsultaSQL_IdProducto = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto = @IdProducto";
+            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
+            sqlConnection.Open();
+
+            SqlCommand sqlCommand_Producto = new SqlCommand(ConsultaSQL_IdProducto, sqlConnection);
+            sqlCommand_Producto.Parameters.AddWithValue("@IdProducto", Convert.ToInt32(txtProducto.Text));
+
+            SqlDataReader sqlDataReader = sqlCommand_Producto.ExecuteReader();
+
+            if (sqlDataReader.HasRows)
+            {
+                gvProductos.DataSource = sqlDataReader;
+                gvProductos.DataBind();
+                lblMensaje.Visible = false;
+            }
+            else
+            {
+                gvProductos.DataSource = null;
+                gvProductos.DataBind();
+                lblMensaje.Text = "No se encontraron productos con ese ID.";
+                lblMensaje.Visible = true;
+            }
+
+            sqlConnection.Close();
+        }
+
+        // ---------- FIN FUNCIONES FILTRAR TABLA POR PRODUCTO ----------
+
         protected void Page_Load(object sender, EventArgs e)
         {
            if (!IsPostBack) {
@@ -99,6 +131,7 @@ namespace TP4_GRUPO_15
             bool hayProducto = int.TryParse(txtProducto.Text, out idProducto);
             bool hayCategoria = int.TryParse(txtCategoria.Text, out idCategoria);
 
+            /// VERIFICACIÓN POR SI NO EXISTE PRODUCTO O CATEGORÍA CON EL ID INTRODUCIDO
             if (hayProducto && !ExisteProducto(idProducto))
             {
                 lblIdProducto.Text = "No existe un producto con ese ID.";
@@ -110,6 +143,7 @@ namespace TP4_GRUPO_15
                 return;
             }
 
+            // FILTRAR TABLA POR PRODUCTO Y CATEGORÍA
             if (!string.IsNullOrEmpty(txtProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
             {
                 
@@ -141,7 +175,20 @@ namespace TP4_GRUPO_15
                 }
             }
 
-           if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
+            // FUNCIÓN FILTRAR TABLA POR PRODUCTO
+
+            //SE VERIFICA QUE SOLO SE HAYA INGRESADO EL ID PRODUCTO
+            if ( string.IsNullOrEmpty(txtCategoria.Text) && !string.IsNullOrEmpty(txtProducto.Text) )
+            {
+                // SE VERIFICA QUE EL DROPDOWNLIST TENGA SELECCIONADO "IGUAL A:"
+                if ( ddlProducto.SelectedIndex == 0)
+                {
+                    FiltrarPorProducto();
+                }
+            }
+
+            // FILTRAR TABLA POR CATEGORÍA
+            if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
             {
                 string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
                 SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
