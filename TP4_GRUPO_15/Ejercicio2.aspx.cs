@@ -102,10 +102,12 @@ namespace TP4_GRUPO_15
             if (hayProducto && !ExisteProducto(idProducto))
             {
                 lblIdProducto.Text = "No existe un producto con ese ID.";
+                return;
             }
             if (hayCategoria && !ExisteCategoria(idCategoria))
             {
                 lblIdCategoria.Text = "No existe una categoría con ese ID.";
+                return;
             }
 
             if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
