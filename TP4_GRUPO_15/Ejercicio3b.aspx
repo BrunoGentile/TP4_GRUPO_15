@@ -66,7 +66,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:LinkButton ID="lbConsultaTema" runat="server">Consultar otro tema</asp:LinkButton>
+                        <asp:LinkButton ID="lbConsultaTema" runat="server" OnClick="lbConsultaTema_Click">Consultar otro tema</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

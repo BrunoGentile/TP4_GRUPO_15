@@ -13,5 +13,10 @@ namespace TP4_GRUPO_15
         {
 
         }
+
+        protected void lbConsultaTema_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio3.aspx");
+        }
     }
 }
