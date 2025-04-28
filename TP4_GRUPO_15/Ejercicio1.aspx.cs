@@ -240,7 +240,7 @@ namespace TP4_GRUPO_15
             }
             else if (Precios.ContainsKey((destino, origen)))
             {
-                return $"El precio estimado de su vuelo es de ${Precios[(origen, destino)]} pesos argentinos.";
+                return $"El precio estimado de su vuelo es de ${Precios[(destino, origen)]} pesos argentinos.";
             }
             else
             {
