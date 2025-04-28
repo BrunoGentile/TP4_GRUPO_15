@@ -182,9 +182,12 @@ namespace TP4_GRUPO_15
 
             if (sqlDataReader.HasRows)
             {
-                gvProductos.DataSource = sqlDataReader;
+                DataTable dt = new DataTable();
+                dt.Load(sqlDataReader);
+
+                gvProductos.DataSource = dt;
                 gvProductos.DataBind();
-                lblMensaje.Text = "Filtrado exitoso.";
+                lblMensaje.Text = $"Filtrado exitoso. Se encontraron {dt.Rows.Count} productos.";
                 lblMensaje.Visible = true;
             }
             else
