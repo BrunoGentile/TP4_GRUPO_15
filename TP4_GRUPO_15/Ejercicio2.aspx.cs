@@ -143,79 +143,40 @@ namespace TP4_GRUPO_15
                 return;
             }
 
-            // FILTRAR TABLA POR PRODUCTO Y CATEGORÍA
-            if (!string.IsNullOrEmpty(txtProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
+            string consultaSQL = "SELECT * FROM Productos WHERE 1=1";
+
+            using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
             {
-                
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
 
-                string consultaSQL = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto = @IdProducto AND IdCategoría = @IdCategoría";
+                // Diccionario de operadores
+                var operadores = new Dictionary<string, string>
+            {
+            { "MenorQue", "<" },
+            { "MayorQue", ">" },
+            { "Igual", "=" }
+            };
 
-                using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
+                // Producto
+                if (!string.IsNullOrEmpty(txtProducto.Text))
                 {
-                    SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
+                    string operadorProducto = operadores[ddlProducto.SelectedValue];
+                    consultaSQL += $" AND IdProducto {operadorProducto} @IdProducto";
                     sqlCommand.Parameters.AddWithValue("@IdProducto", Convert.ToInt32(txtProducto.Text));
-                    sqlCommand.Parameters.AddWithValue("@IdCategoría", Convert.ToInt32(txtCategoria.Text));
-
-                    sqlConnection.Open();
-                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-                    if (sqlDataReader.HasRows)
-                    {
-                        gvProductos.DataSource = sqlDataReader;
-                        gvProductos.DataBind();
-                        lblMensaje.Visible = false;
-                    }
-                    else
-                    {
-                        gvProductos.DataSource = null;
-                        gvProductos.DataBind();
-                        lblMensaje.Text = "No se encontraron productos para esos Id producto y categoría.";
-                        lblMensaje.Visible = true;
-                    }
                 }
+
+                // Categoría
+                if (!string.IsNullOrEmpty(txtCategoria.Text))
+                {
+                    string operadorCategoria = operadores[ddlCategoria.SelectedValue];
+                    consultaSQL += $" AND IdCategoría {operadorCategoria} @IdCategoria";
+                    sqlCommand.Parameters.AddWithValue("@IdCategoria", Convert.ToInt32(txtCategoria.Text));
+                }
+
             }
 
-            // FUNCIÓN FILTRAR TABLA POR PRODUCTO
 
-            //SE VERIFICA QUE SOLO SE HAYA INGRESADO EL ID PRODUCTO
-            if ( string.IsNullOrEmpty(txtCategoria.Text) && !string.IsNullOrEmpty(txtProducto.Text) )
-            {
-                // SE VERIFICA QUE EL DROPDOWNLIST TENGA SELECCIONADO "IGUAL A:"
-                if ( ddlProducto.SelectedIndex == 0)
-                {
-                    FiltrarPorProducto();
-                }
-            }
-
-            // FILTRAR TABLA POR CATEGORÍA
-            if (!string.IsNullOrEmpty(txtCategoria.Text) && string.IsNullOrEmpty(txtProducto.Text))
-            {
-                string ConsultaSQL_IdCategoria = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría = @IdCategoría" ;
-                SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
-                sqlConnection.Open();
-
-                SqlCommand sqlCommand_Categoria = new SqlCommand(ConsultaSQL_IdCategoria, sqlConnection);
-                sqlCommand_Categoria.Parameters.AddWithValue("@IdCategoría", Convert.ToInt32(txtCategoria.Text));
-
-                SqlDataReader sqlDataReader = sqlCommand_Categoria.ExecuteReader();  
-
-                if (sqlDataReader.HasRows)
-                {
-                    gvProductos.DataSource = sqlDataReader;
-                    gvProductos.DataBind();
-                    lblMensaje.Visible = false;
-                }
-                else
-                {
-                    gvProductos.DataSource = null;
-                    gvProductos.DataBind();
-                    lblMensaje.Text = "No se encontraron productos para esta categoría.";
-                    lblMensaje.Visible = true;
-                }
-
-                sqlConnection.Close();
-
-            }
 
             txtProducto.Text = string.Empty;
             txtCategoria.Text = string.Empty;
