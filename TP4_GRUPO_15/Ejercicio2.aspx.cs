@@ -184,7 +184,8 @@ namespace TP4_GRUPO_15
             {
                 gvProductos.DataSource = sqlDataReader;
                 gvProductos.DataBind();
-                lblMensaje.Visible = false;
+                lblMensaje.Text = "Filtrado exitoso.";
+                lblMensaje.Visible = true;
             }
             else
             {
@@ -229,6 +230,10 @@ namespace TP4_GRUPO_15
 
             txtProducto.Text = string.Empty;
             txtCategoria.Text = string.Empty;
+
+            //VACIAR LBL MENSAJE
+
+            lblMensaje.Text = "";
         }
 
         protected void btnInicio_Click(object sender, EventArgs e)
