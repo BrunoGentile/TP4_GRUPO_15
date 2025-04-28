@@ -13,5 +13,20 @@ namespace TP4_GRUPO_15
         {
 
         }
+
+        protected void BTN_EJ1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio1.aspx");
+        }
+
+        protected void BTN_EJ2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio2.aspx");
+        }
+
+        protected void BTN_EJ3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio3.aspx");
+        }
     }
 }
