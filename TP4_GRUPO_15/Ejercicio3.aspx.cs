@@ -42,5 +42,10 @@ namespace TP4_GRUPO_15
         {
             Server.Transfer("Ejercicio3b.aspx");
         }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

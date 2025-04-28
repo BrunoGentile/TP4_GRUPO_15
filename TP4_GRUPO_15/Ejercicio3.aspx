@@ -67,7 +67,9 @@
                         <asp:LinkButton ID="lbLibros" runat="server" OnClick="lbLibros_Click"> Ver libros</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" ValidationGroup="0" Width="75px" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
