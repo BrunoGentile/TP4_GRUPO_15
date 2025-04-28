@@ -176,7 +176,26 @@ namespace TP4_GRUPO_15
 
             }
 
+            sqlCommand.CommandText = consultaSQL;
+            sqlConnection.Open();
 
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            if (sqlDataReader.HasRows)
+            {
+                gvProductos.DataSource = sqlDataReader;
+                gvProductos.DataBind();
+                lblMensaje.Visible = false;
+            }
+            else
+            {
+                gvProductos.DataSource = null;
+                gvProductos.DataBind();
+                lblMensaje.Text = "No se encontraron productos con los filtros aplicados.";
+                lblMensaje.Visible = true;
+            }
+
+            sqlConnection.Close();
 
             txtProducto.Text = string.Empty;
             txtCategoria.Text = string.Empty;
