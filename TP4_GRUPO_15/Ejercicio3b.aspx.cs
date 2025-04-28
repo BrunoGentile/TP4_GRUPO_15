@@ -36,12 +36,15 @@ namespace TP4_GRUPO_15
             if ( !IsPostBack )
             {
                 string Tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedItem.Text;
+                bool ordenar = ((CheckBox)PreviousPage.FindControl("cbPrecios")).Checked;
                 string ConsultaSQL = "SELECT * FROM Libros WHERE IdTema = @Tema";
-
-                // ESTABLEZCO CONEXIÓN
+                if (ordenar)
+                {
+                    ConsultaSQL = "SELECT * FROM Libros WHERE IdTema = @Tema ORDER BY Precio DESC";
+                }
+                    // ESTABLEZCO CONEXIÓN
                 SqlConnection sqlConnection = new SqlConnection(CadenaConexion);
                 sqlConnection.Open();
-
                 // ESTABLECER CONSULTA CON LA BASE DE DATOS
                 SqlCommand SQLCommand = new SqlCommand(ConsultaSQL, sqlConnection);
                 

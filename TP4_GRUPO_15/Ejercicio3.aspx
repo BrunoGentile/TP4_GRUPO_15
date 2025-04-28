@@ -11,17 +11,17 @@
             width: 100%;
         }
         .auto-style3 {
-            width: 132px;
+            width: 150px;
             height: 23px;
         }
         .auto-style4 {
             height: 23px;
         }
         .auto-style6 {
-            width: 132px;
+            width: 150px;
         }
         .auto-style7 {
-            width: 132px;
+            width: 150px;
             height: 26px;
         }
         .auto-style8 {
@@ -47,7 +47,9 @@
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:CheckBox ID="cbPrecios" runat="server" Text="precios ordenados" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -55,8 +57,8 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7"></td>
-                    <td class="auto-style8"></td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style8"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style8"></td>
