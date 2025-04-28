@@ -172,12 +172,7 @@
         &nbsp;<asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         <br />
                         <asp:RequiredFieldValidator ID="rfvProvinciaFinal" runat="server" ControlToValidate="ddlProvinciaFinal" InitialValue="--Seleccionar--">Seleccione una provincia</asp:RequiredFieldValidator>
-                    </td>
-<asp:RequiredFieldValidator ID="rfvProvinciaFinal" runat="server" ControlToValidate="ddlProvinciaFinal" InitialValue="--Seleccionar--">Seleccione una provincia</asp:RequiredFieldValidator>
-                        </td>
-<asp:Label ID="lblMensaje" runat="server"></asp:Label>
-
-                        &nbsp;</td>
+                    </td>                     
                     <td class="auto-style23">
                         &nbsp;</td>
                     <td class="auto-style24"></td>
