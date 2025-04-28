@@ -153,15 +153,15 @@ namespace TP4_GRUPO_15
                 // Diccionario de operadores
                 var operadores = new Dictionary<string, string>
             {
-            { "MenorQue", "<" },
-            { "MayorQue", ">" },
-            { "Igual", "=" }
+            { "Igual a: ", "=" },
+            { "Menor a: ", "<" },
+            { "Mayor a: ", ">" }
             };
 
                 // Producto
                 if (!string.IsNullOrEmpty(txtProducto.Text))
                 {
-                    string operadorProducto = operadores[ddlProducto.SelectedValue];
+                    string operadorProducto = operadores[ddlProducto.SelectedItem.ToString()];
                     consultaSQL += $" AND IdProducto {operadorProducto} @IdProducto";
                     sqlCommand.Parameters.AddWithValue("@IdProducto", Convert.ToInt32(txtProducto.Text));
                 }
@@ -169,12 +169,11 @@ namespace TP4_GRUPO_15
                 // Categoría
                 if (!string.IsNullOrEmpty(txtCategoria.Text))
                 {
-                    string operadorCategoria = operadores[ddlCategoria.SelectedValue];
+                    string operadorCategoria = operadores[ddlCategoria.SelectedItem.ToString()];
                     consultaSQL += $" AND IdCategoría {operadorCategoria} @IdCategoria";
                     sqlCommand.Parameters.AddWithValue("@IdCategoria", Convert.ToInt32(txtCategoria.Text));
                 }
 
-            }
 
             sqlCommand.CommandText = consultaSQL;
             sqlConnection.Open();
@@ -195,7 +194,8 @@ namespace TP4_GRUPO_15
                 lblMensaje.Visible = true;
             }
 
-            sqlConnection.Close();
+            }
+            
 
             txtProducto.Text = string.Empty;
             txtCategoria.Text = string.Empty;
