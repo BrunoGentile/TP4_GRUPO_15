@@ -12,7 +12,7 @@ namespace TP4_GRUPO_15
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-8rcunno\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
+        private const string cadenaConexion = @"Data Source=Localhost\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;TrustServerCertificate=True";
         private string ConsultaSQL_Provincias = "SELECT * FROM provincias";
        
         protected void Page_Load(object sender, EventArgs e)
@@ -81,6 +81,7 @@ namespace TP4_GRUPO_15
                 reader_Loc1.Close();
                 sqlConnection.Close();
             }
+            ValidarProvincias();
         }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
